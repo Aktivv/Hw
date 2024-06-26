@@ -28,8 +28,19 @@ with sqlite3.connect('students.db') as conn:
     c.execute('''SELECT * FROM students WHERE length(name) >= 10''')
     for i in c.fetchall():
         print(i)
+    print('-----------------------------')
 
     c.execute('''UPDATE students SET name = 'Genius' WHERE mark >= 10''')
+    print('-----------------------------')
+
+    c.execute('''SELECT * FROM students WHERE name == 'Genius' ''')
+    for i in c.fetchall():
+        print(i)
+    print('-----------------------------')
+
+    c.execute('''DELETE FROM students WHERE id_hobby % 2 = 0''')
+
+    # c.execute("DELETE FROM students")
 
     c.execute('''SELECT * FROM students''')
     for i in c.fetchall():
