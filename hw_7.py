@@ -29,4 +29,9 @@ with sqlite3.connect('students.db') as conn:
     for i in c.fetchall():
         print(i)
 
-    c.execute('''UPDATE students SET name = 'Gemius' WHERE mark => 10''')
+    c.execute('''UPDATE students SET name = 'Genius' WHERE mark >= 10''')
+
+    c.execute('''SELECT * FROM students''')
+    for i in c.fetchall():
+        print(i)
+
